@@ -17,6 +17,11 @@ ul {
 
 a {
   text-decoration: none;
+  padding-left: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .temperature {
@@ -101,4 +106,13 @@ a {
 
 .card {
   border: none;
+}
+
+a {
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
