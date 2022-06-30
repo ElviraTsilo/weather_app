@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Poppins:wght@700&family=Tiro+Telugu&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Kyiv</h1>
+        <span class="temperature">23°C</span>
+        <ul>
+          <li id="date"></li>
+          <li>&#x1F31E;</li>
+        </ul>
+      </div>
+      <form class="search-form" id="search-form">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group form-group-warning">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your city"
+                id="city-input"
+              />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <input type="submit" class="btn btn-warning" value="Search" />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <input type="submit" id="current-button" class="btn btn-warning" value="Current" />
+            </div>
+          </div>
+        </div>
+      </form>
+      <br />
+      <div class="row days-row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mon 30th</h5>
+              <h6 class="card-subtitle mb-2 text-muted">+23°C</h6>
+              <p class="card-text">&#9925;</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tue 31th</h5>
+              <h6 class="card-subtitle mb-2 text-muted">+23°C</h6>
+              <p class="card-text">&#x1F31E;</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Wed 1st</h5>
+              <h6 class="card-subtitle mb-2 text-muted">+24°C</h6>
+              <p class="card-text">&#x1F31E;</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Thu 2nd</h5>
+              <h6 class="card-subtitle mb-2 text-muted">+25°C</h6>
+              <p class="card-text">&#127783;</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Fri 3rd</h5>
+              <h6 class="card-subtitle mb-2 text-muted">+27°C</h6>
+              <p class="card-text">&#9928;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
