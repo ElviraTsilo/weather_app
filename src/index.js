@@ -23,7 +23,6 @@ function showTemperature(response) {
   let city = response.data.name;
   let header = document.querySelector("h1");
   header.innerHTML = city;
-  console.log(city);
 }
 
 function enterCity(event) {
@@ -42,14 +41,12 @@ let formInput = document.querySelector("#search-form");
 formInput.addEventListener("submit", enterCity);
 
 function currentLocation(position) {
-  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "fa2a49395aed41c446ad27757ee747da";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
   let unit = "metric";
   let apiUrl = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
 }
 function getLocation() {
