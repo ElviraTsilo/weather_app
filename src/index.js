@@ -23,6 +23,14 @@ function showTemperature(response) {
   let city = response.data.name;
   let header = document.querySelector("h1");
   header.innerHTML = city;
+
+  let humidity = response.data.main.humidity;
+  let cityHumidity = document.querySelector(".humidity");
+  cityHumidity.innerHTML = `Humidity: ${humidity}%`;
+
+  let wind = response.data.wind.speed;
+  let cityWind = document.querySelector(".wind");
+  cityWind.innerHTML = `Wind: ${wind} meter/sec`;
 }
 
 function enterCity(event) {
