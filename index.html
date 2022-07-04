@@ -27,11 +27,19 @@
     <div class="container">
       <div class="row">
         <h1>Kyiv</h1>
-        <span class="temperature">23°C</span>
-        <ul>
-          <li id="date"></li>
-          <li>&#x1F31E;</li>
-        </ul>
+        <h2 id="date"></h2>
+        <div class="col-6">
+          <ul>
+            <li class="temperature">23°C</li>
+            <li class="emoji">&#x1F31E;</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul class="units">
+            <li class="humidity">Humidity: 55%</li>
+            <li class="wind">Wind: 2 km/h</li>
+          </ul>
+        </div>
       </div>
       <form class="search-form" id="search-form">
         <div class="row">
