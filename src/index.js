@@ -17,6 +17,7 @@ function currentDate() {
 currentDate();
 
 function showTemperature(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let cityTemperature = document.querySelector(".temperature");
   cityTemperature.innerHTML = `${temperature}°C`;
@@ -63,3 +64,7 @@ function getLocation() {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getLocation);
+
+let apiKey = "fa2a49395aed41c446ad27757ee747da";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(showTemperature);
