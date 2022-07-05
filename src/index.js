@@ -1,5 +1,5 @@
-function currentDate() {
-  let currentDate = new Date();
+function currentDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -9,21 +9,29 @@ function currentDate() {
     "Friday",
     "Saturday",
   ];
-  let day = days[currentDate.getDay()];
-  let time = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
-  let date = document.querySelector("#date");
-  date.innerHTML = `${day} ${time}`;
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes}`;
 }
 currentDate();
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let cityTemperature = document.querySelector(".temperature");
   cityTemperature.innerHTML = `${temperature}°C`;
   let city = response.data.name;
   let header = document.querySelector("h1");
   header.innerHTML = city;
+
+  let date = document.querySelector("#date");
+  date.innerHTML = currentDate(response.data.dt * 1000);
 
   let humidity = response.data.main.humidity;
   let cityHumidity = document.querySelector(".humidity");
