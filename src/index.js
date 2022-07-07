@@ -20,7 +20,6 @@ function currentDate(timestamp) {
   }
   return `${day} ${hours}:${minutes}`;
 }
-currentDate();
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -40,6 +39,15 @@ function showTemperature(response) {
   let wind = response.data.wind.speed;
   let cityWind = document.querySelector(".wind");
   cityWind.innerHTML = `Wind: ${wind} meter/sec`;
+
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function enterCity(event) {
