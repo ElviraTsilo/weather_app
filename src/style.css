@@ -17,7 +17,6 @@ ul {
 
 a {
   text-decoration: none;
-  padding-left: 30px;
 }
 
 a:hover {
@@ -28,10 +27,21 @@ a:hover {
   text-align: center;
 }
 
-.temperature {
+.units,
+#temperature {
   color: #2f1b41;
   font-size: 30px;
   opacity: 0.7;
+}
+
+.active {
+  color: #2f1b41;
+  cursor: default;
+}
+
+.active:hover {
+  color: #2f1b41;
+  text-decoration: none;
 }
 
 #icon {
@@ -62,7 +72,7 @@ a:hover {
   font-size: 22px;
 }
 
-.units {
+ul {
   padding-top: 20px;
   color: #2f1b41;
   font-size: 20px;
@@ -147,11 +157,6 @@ a:hover {
   border: none;
 }
 
-a {
-  text-decoration: none;
+small {
   padding-left: 30px;
-}
-
-a:hover {
-  text-decoration: underline;
 }

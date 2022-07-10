@@ -22,9 +22,10 @@ function currentDate(timestamp) {
 }
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let cityTemperature = document.querySelector(".temperature");
-  cityTemperature.innerHTML = `${temperature}°C`;
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
+  let cityTemperature = document.querySelector("#temperature");
+  cityTemperature.innerHTML = `${temperature}`;
   let city = response.data.name;
   let header = document.querySelector("h1");
   header.innerHTML = city;
@@ -86,3 +87,26 @@ currentButton.addEventListener("click", getLocation);
 let apiKey = "fa2a49395aed41c446ad27757ee747da";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
