@@ -21,6 +21,35 @@ function currentDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row days-row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${day}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">23°C</h6>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="weather image"
+                id="weather-icon-forecast"
+              />
+            </div>
+          </div>
+        </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
@@ -110,3 +139,5 @@ function displayCelsiusTemperature(event) {
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();

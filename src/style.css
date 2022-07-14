@@ -72,6 +72,12 @@ a:hover {
   font-size: 22px;
 }
 
+#weather-icon-forecast {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+}
+
 ul {
   padding-top: 20px;
   color: #2f1b41;
