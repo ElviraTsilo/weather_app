@@ -45,7 +45,7 @@ a:hover {
 }
 
 #icon {
-  width: 60px;
+  width: 80px;
 }
 
 #description {
@@ -53,6 +53,7 @@ a:hover {
   color: #2f1b41;
   opacity: 0.7;
   text-transform: capitalize;
+  padding-left: 18px;
 }
 
 .container {
@@ -73,7 +74,7 @@ a:hover {
 }
 
 #weather-icon-forecast {
-  width: 45px;
+  width: 60px;
   display: block;
   margin: 0 auto;
 }
@@ -138,7 +139,7 @@ ul {
   font-size: 18px;
   font-weight: 1000;
   text-align: center;
-  min-height: 45px;
+  min-height: 38px;
 }
 
 .card-subtitle {
