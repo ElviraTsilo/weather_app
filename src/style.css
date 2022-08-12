@@ -1,5 +1,6 @@
 body {
   font-family: "Work Sans", sans-serif;
+  background-color: #fbf7f7;
 }
 
 ul {
@@ -57,11 +58,12 @@ a:hover {
 }
 
 .container {
-  margin: 30px 30px;
+  margin: 30px auto;
   max-width: 800px;
   border: 3px solid #ffcab0;
   border-radius: 20px;
   box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
+  background-color: antiquewhite;
 }
 
 #date {
@@ -162,8 +164,9 @@ ul {
 
 .card {
   border: none;
+  background-color: antiquewhite;
 }
 
-small {
-  padding-left: 30px;
+footer {
+  padding: 20px 30px;
 }
